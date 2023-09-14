@@ -1,12 +1,21 @@
 package com.example.springbasics.movierecommendersystem.lesson2;
 
 public class RecommenderImplementation {
-    public String[] recommendMovies (String movie) {
-        //use content based filter to find similar movies
-        ContentBasedFilter filter = new ContentBasedFilter();
-        String[] recommendedMovies = filter.getRecommendations(movie);
+    // use filter interface to select filter
+    private Filter filter;
 
-        //return the results
-        return recommendedMovies;
+    public RecommenderImplementation(Filter filter) {
+        super();
+        this.filter = filter;
+    }
+
+    // use a filter to find recommendations
+    public String [] recommendMovies (String movie) {
+        // print the name of interface implementation being used
+        System.out.println("Name of the filter in use: " + filter + "\n");
+
+        String[] movieRecommendations = filter.getRecommendations("Finding Dory");
+
+        return movieRecommendations;
     }
 }

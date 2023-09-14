@@ -8,13 +8,16 @@ import java.util.Arrays;
 @SpringBootApplication
 public class MovieRecommenderSystemApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MovieRecommenderSystemApplication.class, args);
+//        SpringApplication.run(MovieRecommenderSystemApplication.class, args);
 
-        //create object of RecommenderImplementation class
-        RecommenderImplementation movieRecommender = new RecommenderImplementation();
-        //call method to get recommendations
+        // passing name of the filter as constructor argument
+        RecommenderImplementation movieRecommender = new RecommenderImplementation(new ContentBasedFilter());
+//        RecommenderImplementation movieRecommender = new RecommenderImplementation(new CollaborativeFilter());
+
+        // call method to get recommendations
         String[] recommendedMovies = movieRecommender.recommendMovies("Finding Dory");
-        //display results
+
+        // display results
         System.out.println(Arrays.toString(recommendedMovies));
     }
 }

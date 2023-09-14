@@ -2,7 +2,9 @@ package com.example.springbasics.movierecommendersystem.lesson2;
 
 public class CollaborativeFilter implements Filter {
     public String[] getRecommendations(String movie) {
-        //logic of collaborative filter
+        // implement logic of collaborative filter
+
+        // return movie recommendations
         return new String[] { };
     }
 }
