@@ -1,17 +1,19 @@
 package com.example.springbasics.movierecommendersystem.lesson3;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import java.util.Arrays;
 
 @SpringBootApplication
 public class MovieRecommenderSystemApplication {
     public static void main(String[] args) {
-//        SpringApplication.run(MovieRecommenderSystemApplication.class, args);
+        // Application manages the beans and dependencies
+        ApplicationContext appContext = SpringApplication.run(MovieRecommenderSystemApplication.class, args);
 
-        // passing name of the filter as constructor argument
-        RecommenderImplementation movieRecommender = new RecommenderImplementation(new ContentBasedFilter());
-//        RecommenderImplementation movieRecommender = new RecommenderImplementation(new CollaborativeFilter());
+        // Use ApplicationContext to find which filter is being used
+        RecommenderImplementation movieRecommender = appContext.getBean(RecommenderImplementation.class);
 
         // call method to get recommendations
         String[] recommendedMovies = movieRecommender.recommendMovies("Finding Dory");
