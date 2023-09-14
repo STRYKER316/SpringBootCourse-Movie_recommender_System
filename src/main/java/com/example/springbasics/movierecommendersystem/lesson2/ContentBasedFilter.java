@@ -1,6 +1,6 @@
 package com.example.springbasics.movierecommendersystem.lesson2;
 
-public class ContentBasedFilter {
+public class ContentBasedFilter implements Filter {
     public String[] getRecommendations(String movie) {
         // implement logic of content based filter
 
