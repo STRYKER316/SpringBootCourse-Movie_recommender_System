@@ -2,7 +2,7 @@ package com.example.springbasics.movierecommendersystem.lesson6;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("CBF")
 public class ContentBasedFilter implements Filter {
     public String[] getRecommendations(String movie) {
         // implement logic of content based filter
