@@ -4,8 +4,6 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
-//Auto-wiring by Type with @Primary
 public class CollaborativeFilter implements Filter {
     public String[] getRecommendations(String movie) {
         // implement logic of collaborative filter
