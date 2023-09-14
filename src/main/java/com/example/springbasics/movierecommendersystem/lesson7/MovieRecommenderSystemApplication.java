@@ -12,7 +12,8 @@ public class MovieRecommenderSystemApplication {
         // Application manages the beans and dependencies
         ApplicationContext appContext = SpringApplication.run(MovieRecommenderSystemApplication.class, args);
 
-        // Use ApplicationContext to find which filter is being used
+        // RecommenderImplementation injects dependency using constructor
+        System.out.println("Calling getBean() on RecommenderImplementation");
         RecommenderImplementation movieRecommender = appContext.getBean(RecommenderImplementation.class);
 
         // call method to get recommendations

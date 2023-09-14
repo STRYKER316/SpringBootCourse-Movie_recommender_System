@@ -6,11 +6,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RecommenderImplementation {
-    // Autowiring by Name
-    @Autowired
-    @Qualifier("CBF")
-//    @Qualifier("CF")
     private Filter filter;
+
+    public RecommenderImplementation(@Qualifier("CBF2") Filter filter) {
+        this.filter = filter;
+        System.out.println("Constructor invoked...");
+    }
 
     // use a filter to find recommendations
     public String [] recommendMovies (String movie) {

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RecommenderImplementation {
-    // Autowiring by Name
+    // Autowiring by @Qualifier
     @Autowired
     @Qualifier("CBF")
 //    @Qualifier("CF")
